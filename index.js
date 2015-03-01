@@ -1,8 +1,8 @@
 var elixir = require('laravel-elixir'),
     gulp = require("gulp"),
     compass = require('gulp-compass'),
-    Utilities = require('laravel-elixir/ingredients/helpers/Utilities'),
-    Notification = require('laravel-elixir/ingredients/helpers/Notification'),
+    Utilities = require('laravel-elixir/ingredients/commands/Utilities'),
+    Notification = require('laravel-elixir/ingredients/commands/Notification'),
     _ = require('underscore');
 
 elixir.extend("compass", function(src, outputDir, options) {

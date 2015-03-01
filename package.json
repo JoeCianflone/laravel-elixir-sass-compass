@@ -24,8 +24,8 @@
   },
   "homepage": "https://github.com/joecianflone/laravel-elixir-sass-compass",
   "dependencies": {
-      "gulp-notify": "^2.2.0",
-      "gulp-compass": "^2.0.3",
-      "underscore": "^1.8.2"
+    "gulp-compass": "^2.0.3",
+    "gulp-notify": "^2.2.0",
+    "underscore": "^1.8.2"
   }
 }
