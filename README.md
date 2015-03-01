@@ -1,4 +1,4 @@
-laravel-elixir-compass
+laravel-elixir-sass-compass
 ======================
 
 ## Usage
