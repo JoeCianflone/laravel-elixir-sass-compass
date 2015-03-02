@@ -10,18 +10,35 @@ elixir.extend("compass", function(src, outputDir, options) {
     var config = this,
         publicDir = './public/',
         defaultOptions = {
+            generated_images_path: false,
             config_file: false,
+            javascript:  config.jsOutput,
             sourcemap:   false,
-            modules:     false,
-            style:       config.production ? "compressed" : "expanded",
+            http_path:   false,
+            relative:    true,
+            comments:    true,
+            require:     false,
+            style:       config.production ? "compressed" : "nested",
             image:       publicDir + 'images',
             font:        publicDir + 'fonts',
             sass:        config.assetsDir + 'scss',
-            css:         outputDir || config.cssOutput,
-            js:          config.jsOutput
+            css:         outputDir || config.cssOutput
         };
-
     options = _.extend(defaultOptions, options);
+
+    // Make the names in the options match what Compass is
+    // actually expecting.  Since the docs had two fields
+    // that didn't match, we'll accept them for now, but
+    // remove them in a later version.
+    if (_.has(options, 'js')) {
+        options.javascript = options.js;
+        options = _.omit(options, 'js');
+    }
+    if (_.has(options, 'modules')) {
+        options.require = options.modules;
+        options = _.omit(options, 'modules');
+    }
+
     src = Utilities.buildGulpSrc(src, options.sass, '**/*.scss');
 
     var onError = function(e) {
@@ -31,19 +48,10 @@ elixir.extend("compass", function(src, outputDir, options) {
 
     gulp.task('compass', function() {
         return gulp.src(src)
-            .pipe(compass({
-                require: options.modules,
-                config_file: options.config_file,
-                style: options.style,
-                css: options.css,
-                sass: options.sass,
-                font: options.font,
-                image: options.image,
-                javascript: options.js,
-                sourcemap: options.sourcemap
-            })).on('error', onError)
+            .pipe(compass(options)).on('error', onError)
             .pipe(new Notification().message('Compass Compiled!'));
     });
+
     this.registerWatcher('compass', options.sass + '/**/*.scss');
     return this.queueTask("compass");
 });
