@@ -8,7 +8,7 @@ Add it to your Elixir-enhanced Gulpfile, like so:
 ```
 var elixir = require('laravel-elixir');
 
-require('laravel-elixir-compass');
+require('laravel-elixir-sass-compass');
 
 elixir(function(mix) {
    mix.compass();
