@@ -26,10 +26,6 @@ elixir.extend("compass", function(src, outputDir, options) {
         };
     options = _.extend(defaultOptions, options);
 
-    // Make the names in the options match what Compass is
-    // actually expecting.  Since the docs had two fields
-    // that didn't match, we'll accept them for now, but
-    // remove them in a later version.
     if (_.has(options, 'js')) {
         options.javascript = options.js;
         options = _.omit(options, 'js');
