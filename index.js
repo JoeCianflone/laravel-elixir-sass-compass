@@ -44,7 +44,8 @@ elixir.extend("compass", function(src, outputDir, options) {
 
     gulp.task('compass', function() {
         return gulp.src(src)
-            .pipe(compass(options)).on('error', onError);
+            .pipe(compass(options)).on('error', onError)
+            .pipe(new Notification().message('Compass Compiled!'));
     });
 
     this.registerWatcher('compass', options.sass + '/**/*.scss');

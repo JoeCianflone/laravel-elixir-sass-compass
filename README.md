@@ -36,7 +36,7 @@ Compass has a lot of different options and ways you can tweak your output:
 mix.compass("*", "foo/bar/baz", {
     require: ['susy'],
     config_file: "path/to/config.rb",
-    style: "nested"
+    style: "nested",
     sass: "resources/assets/sass",
     font: "public/fonts",
     image: "public/images",
