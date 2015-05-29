@@ -37,7 +37,7 @@ mix.compass("*", "foo/bar/baz", {
     require: ['susy'],
     config_file: "path/to/config.rb",
     style: "nested"
-    sass: "resources/assets/sass",
+    sass: "resources/assets/scss",
     font: "public/fonts",
     image: "public/images",
     javascript: "public/js",
