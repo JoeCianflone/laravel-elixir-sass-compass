@@ -44,6 +44,6 @@ Elixir.extend("compass", function(src, output, options) {
     var prepGulpPaths = function(src, output) {
         return new Elixir.GulpPaths()
             .src(src, options.sass)
-            .output(output || config.get('public.css.outputFolder'), 'app.css');
+            .output(options.css, 'app.css');
     };
 });
