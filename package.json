@@ -1,6 +1,6 @@
 {
   "name": "laravel-elixir-sass-compass",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Laravel Elixir Compass Extension",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/joecianflone/laravel-elixir-sass-compass",
   "dependencies": {
-    "gulp-compass": "^2.0.3",
+    "gulp-compass": "^2.1.0",
     "gulp-notify": "^2.2.0",
     "underscore": "^1.8.2"
   }
