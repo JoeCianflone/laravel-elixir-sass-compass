@@ -20,8 +20,8 @@ Elixir.extend("compass", function(src, output, options) {
             style:       config.css.sass.pluginOptions.outputStyle,
             image:       config.publicPath + '/images',
             font:        config.publicPath + '/fonts',
-            sass:        config.css.sass.folder,
-            css:         output || config.css.outputFolder
+            sass:        config.assetsPath + '/' + config.css.sass.folder,
+            css:         output || config.publicPath + '/' + config.css.outputFolder
         };
 
     options = _.extend(defaultOptions, options);
