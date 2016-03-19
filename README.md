@@ -1,5 +1,7 @@
 laravel-elixir-sass-compass
 ======================
+## Important Note
+*Compass has been deprecated. This plugin will continue to work as long as I can keep it working, but you should consider migrating away from Compass in general.*
 
 ## Usage
 This is a simple compass wrapper for Laravel Elixir that was ported from: [laravel-elixir-stylus](https://github.com/JeffreyWay/laravel-elixir-stylus)
